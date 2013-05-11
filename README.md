@@ -5,7 +5,7 @@ a facebook bot help your post message to facebook group
 
 usage
 =======
-python facebot.py <message.txt>
+python facebot.py message.txt
 
 message
 =======
