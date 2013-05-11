@@ -5,7 +5,7 @@ a facebook bot help your post message to facebook group
 
 requirement
 =======
-This tool need fbconsole library, so "pip install sbconsole" before you run this tool.
+This tool need fbconsole library, so "git checkout https://github.com/facebook/fbconsole.git" and "python setup.py install"
 
 usage
 =======
