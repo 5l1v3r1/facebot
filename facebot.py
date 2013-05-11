@@ -4,8 +4,8 @@ import sys
 import random
 import fbconsole as fb
 
-#GID = '504896499520960' # pan group
-GID = '102305819969381' # myfrog
+#GID = '102305819969381' # myfrog
+GID = '504896499520960' # pan group
 
 def post_msg(fb, path, msg):
     fb.post(path, {"message": msg})
@@ -26,15 +26,18 @@ def main():
         sys.exit()
     fn = sys.argv[1]
     fb.AUTH_SCOPE = ['publish_stream', 'publish_checkins', 'user_groups']
+    print "[i] authentication"
     fb.authenticate()
     msg = get_rand_msg(fn)
     if get_weekday() == 5:
         path = '/%s/feed' % GID
     else:
+        print "[i] get first message"
         msgs = get_msgs(fb, '/%s/feed' % GID )
         mid = msgs['data'][0]['id']
         path = '/%s/comments' % mid 
     post_msg(fb, path , msg)
+    print "[i] message sent"
 
 if __name__ == '__main__':
     main()
